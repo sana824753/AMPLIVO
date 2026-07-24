@@ -161,7 +161,7 @@ export default function CrmProjectDetailsPage() {
                         className="rounded border-white/20 bg-white/5 text-violet-500 focus:ring-violet-500/20"
                       />
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm text-white truncate">{emp.name}</p>
+                        <p className="text-sm text-white truncate">{emp.name || emp.firstName}</p>
                         <p className="text-[10px] text-slate-500 truncate">{emp.role}</p>
                       </div>
                       <div className="shrink-0 text-right">
@@ -186,10 +186,10 @@ export default function CrmProjectDetailsPage() {
                 {assignedEmpsFull.map(emp => (
                   <div key={emp.id} className="flex items-center gap-3 p-2 bg-white/5 rounded-lg border border-white/5">
                     <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-xs font-bold text-white">
-                      {emp.name.charAt(0)}
+                      {emp.name?.charAt(0) || '?'}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-white">{emp.name}</p>
+                      <p className="text-sm font-medium text-white">{emp.name || emp.firstName}</p>
                       <p className="text-[10px] text-slate-500">{emp.role}</p>
                     </div>
                   </div>

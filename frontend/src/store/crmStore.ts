@@ -273,7 +273,8 @@ export const useCrmStore = create<CrmState>()(
         try {
           const res = await userManagementService.getUsers({ page_size: 100 });
           const users = res.items || res || [];
-          const crmEmployees: CrmEmployee[] = users.map((u: Record<string, any>) => ({
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const crmEmployees: CrmEmployee[] = users.map((u: any) => ({
             id: u.id || '',
             firstName: u.first_name || u.firstName || '',
             lastName: u.last_name || u.lastName || '',

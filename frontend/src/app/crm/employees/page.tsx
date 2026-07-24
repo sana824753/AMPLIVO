@@ -78,10 +78,10 @@ export default function CrmEmployeesPage() {
               <div className="flex justify-between items-start mb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-slate-800 border-2 border-[#12141f] flex items-center justify-center text-lg font-bold text-white">
-                    {emp.name.charAt(0)}
+                    {emp.name?.charAt(0) || '?'}
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold text-white">{emp.name}</h3>
+                    <h3 className="text-base font-semibold text-white">{emp.name || emp.firstName}</h3>
                     <p className="text-xs text-slate-500">{emp.role}</p>
                   </div>
                 </div>
